@@ -6,7 +6,7 @@
 
 supported="The MariaDB Repository supports these Linux OSs, on x86-64 only:
     * RHEL/CentOS 6 & 7
-    * Ubuntu 14.04 LTS (trusty) & 16.04 LTS (xenial)
+    * Ubuntu 14.04 LTS (trusty), 16.04 LTS (xenial), & 18.04 LTS (bionic)
     * Debian 7 (wheezy) & 8 (jessie)
     * SLES 12"
 
@@ -250,6 +250,7 @@ identify_os(){
                     precise ) error 'Ubuntu version 12.04 LTS has reached End of Life and is no longer supported.' ;;
                     trusty ) ;;
                     xenial ) ;;
+                    bionic ) ;;
                     *) error "Detected Ubuntu but version ($os_version) is not supported." "Only Ubuntu LTS releases are supported."  "$otherplatforms" ;;
                 esac
                 if [[ $arch == aarch64 ]] && [[ $os_version != xenial ]]; then error "Only Ubuntu 16/xenial are supported for ARM64. Detected version: '$os_version'"; fi
